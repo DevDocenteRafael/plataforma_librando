@@ -103,12 +103,12 @@ select:focus-visible {
 
 .brand {
   display: inline-flex;
-  width: 132px;
-  height: 84px;
+  width: 8.25rem;
+  height: 5.25rem;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  padding: 15px;
+  padding: .9375rem;
   background: var(--paper);
 }
 
@@ -1074,8 +1074,8 @@ select:focus-visible {
   }
 
   .brand {
-    width: 112px;
-    height: 74px;
+    width: 7rem;
+    height: 4.625rem;
   }
 
   .nav-link {
