@@ -10,7 +10,7 @@ const accessibilityStatus = document.querySelector('[data-accessibility-status]'
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   document.documentElement.dataset.theme = theme;
-  themeMeta?.setAttribute('content', isDark ? '#202329' : '#fffaf6');
+  themeMeta?.setAttribute('content', isDark ? '#202329' : '#ffffff');
 
   themeButtons.forEach((button) => {
     button.setAttribute('aria-pressed', String(isDark));
