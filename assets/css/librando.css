@@ -8,7 +8,7 @@
   --line: #eee8e2;
   --input-surface: #ffffff;
   --orange: #ee692c;
-  --orange-dark: #c94c1d;
+  --orange-dark: var(--orange);
   --charcoal: #292b32;
   --shadow: 0 14px 40px rgba(44, 35, 29, .08);
   font-family: "DM Sans", sans-serif;
@@ -26,8 +26,8 @@
   --surface: #292d34;
   --line: #41464f;
   --input-surface: #292d34;
-  --orange: #f47b43;
-  --orange-dark: #ff9b64;
+  --orange: #ee692c;
+  --orange-dark: var(--orange);
   --charcoal: #292b32;
   --shadow: 0 14px 40px rgba(0, 0, 0, .25);
 }
@@ -221,7 +221,7 @@ select:focus-visible {
 }
 
 .eyebrow {
-  color: #ffc09f;
+  color: var(--orange);
 }
 
 .eyebrow-dot {
@@ -244,7 +244,7 @@ select:focus-visible {
 }
 
 .hero h1 span {
-  color: #ff9b64;
+  color: var(--orange);
 }
 
 .hero-inner > p,
@@ -291,7 +291,7 @@ select:focus-visible {
 
 .button-primary:hover {
   background: var(--orange-dark);
-  box-shadow: 0 8px 20px rgba(201, 76, 29, .2);
+  box-shadow: 0 8px 20px rgba(238, 105, 44, .2);
 }
 
 .hero-decoration {
@@ -347,7 +347,7 @@ select:focus-visible {
 }
 
 .hero-stamp span:last-child {
-  color: #ff9b64;
+  color: var(--orange);
 }
 
 .section {
@@ -532,7 +532,7 @@ select:focus-visible {
   font-weight: 700;
 }
 
-.tag-cumprimentos { background: #fff0e7; color: #a9461e; }
+.tag-cumprimentos { background: var(--orange); color: #fff; }
 .tag-cortesia { background: #f8eee4; color: #875628; }
 .tag-conversa { background: #eef0ff; color: #4c5299; }
 .tag-cotidiano { background: #edf5eb; color: #3d693b; }
@@ -621,7 +621,7 @@ select:focus-visible {
 }
 
 .back-link:hover {
-  color: #ff9b64;
+  color: var(--orange);
 }
 
 .catalog-intro h1 {
@@ -631,7 +631,7 @@ select:focus-visible {
 }
 
 .catalog-intro h1 span {
-  color: #ff9b64;
+  color: var(--orange);
 }
 
 .catalog-section {
