@@ -25,13 +25,12 @@ function applyTheme(theme) {
 
 // Limita o ajuste de fonte para manter a navegação e o conteúdo utilizáveis.
 function applyFontScale(scale, announce = true) {
-  const boundedScale = Math.min(1.3, Math.max(0.9, scale));
+  const boundedScale = Math.max(0.1, scale);
   document.documentElement.style.setProperty('--font-scale', boundedScale);
   localStorage.setItem('librando-font-scale', String(boundedScale));
   if (fontScaleOutput) fontScaleOutput.textContent = `${Math.round(boundedScale * 100)}%`;
   fontButtons.forEach((button) => {
-    button.disabled = (button.dataset.fontAction === 'increase' && boundedScale >= 1.3)
-      || (button.dataset.fontAction === 'decrease' && boundedScale <= 0.9);
+    button.disabled = button.dataset.fontAction === 'decrease' && boundedScale <= 0.1;
   });
   if (announce) {
     if (accessibilityStatus) accessibilityStatus.textContent = `Tamanho da fonte: ${Math.round(boundedScale * 100)} por cento.`;
