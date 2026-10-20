@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/librando.css?v=4">
-  <script src="assets/js/accessibility.js?v=2" defer></script>
-  <script src="assets/js/videos.js" defer></script>
+  <link rel="stylesheet" href="assets/css/librando.css?v=14">
+  <script src="assets/js/accessibility.js?v=3" defer></script>
+  <script src="assets/js/videos.js?v=5" defer></script>
   <title>Librando — um sinal de cada vez</title>
 </head>
 <body>
@@ -19,17 +19,26 @@
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Navegação principal">
       <a class="brand" href="index.html" aria-label="Librando — página inicial">
-        <img src="assets/images/librando-logo.png" alt="Librando">
+        <img src="assets/images/librando-logo.png?v=2" alt="Librando">
       </a>
       <div class="nav-actions">
-        <div class="accessibility-tools" role="group" aria-label="Opções de acessibilidade">
-          <button class="font-button" type="button" data-font-action="decrease" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A−</button>
-          <button class="font-button" type="button" data-font-action="reset" aria-label="Restaurar tamanho padrão da fonte" title="Restaurar fonte">A</button>
-          <button class="font-button" type="button" data-font-action="increase" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
-          <button class="theme-button" type="button" data-theme-toggle aria-label="Ativar modo escuro" aria-pressed="false">
-            <span class="theme-icon" aria-hidden="true">◐</span>
-            <span class="theme-label">Modo escuro</span>
+        <div class="accessibility-menu">
+          <button class="accessibility-trigger" type="button" data-accessibility-toggle aria-expanded="false" aria-controls="accessibility-panel">
+            <span aria-hidden="true">◉</span> Acessibilidade
           </button>
+          <div class="accessibility-panel" id="accessibility-panel" role="group" aria-label="Opções de acessibilidade" hidden>
+            <p class="accessibility-panel-title">Ajustes de leitura</p>
+            <div class="font-controls" role="group" aria-label="Tamanho da fonte">
+              <button class="font-button" type="button" data-font-action="decrease" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A−</button>
+              <output data-font-scale aria-live="polite">100%</output>
+              <button class="font-button" type="button" data-font-action="increase" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+              <button class="font-button font-reset" type="button" data-font-action="reset" aria-label="Restaurar tamanho padrão da fonte" title="Restaurar fonte">Padrão</button>
+            </div>
+            <button class="theme-button" type="button" data-theme-toggle aria-label="Ativar modo escuro" aria-pressed="false">
+              <span class="theme-icon" aria-hidden="true">◐</span>
+              <span class="theme-label">Modo escuro</span>
+            </button>
+          </div>
           <span class="sr-only" data-accessibility-status aria-live="polite" aria-atomic="true"></span>
         </div>
         <a class="nav-link" href="pages/videos.html">Explorar sinais <span aria-hidden="true">↗</span></a>
@@ -72,7 +81,7 @@
   <footer class="site-footer">
     <a class="footer-brand" href="index.html">Librando<span>.</span></a>
     <p>Mais sinais, mais encontros, mais possibilidades.</p>
-    <span class="footer-note">Os vídeos são encontrados no YouTube.</span>
+    <span class="footer-note">Vídeos públicos incorporados do YouTube.</span>
   </footer>
 </body>
 </html>

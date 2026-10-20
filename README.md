@@ -1,6 +1,6 @@
 # Librando
 
-Plataforma para descobrir expressões em Libras por meio de vídeos do YouTube. A página inicial destaca nove sinais; o catálogo permite pesquisar, filtrar por categoria e navegar pelas páginas. Não há integração com banco de dados ou serviço de reservas.
+Plataforma para descobrir expressões em Libras por meio de vídeos públicos do YouTube. A página inicial destaca nove sinais; o catálogo permite pesquisar, filtrar por categorias como tecnologia, saúde, educação, alimentação, transporte e trabalho, e navegar pelas páginas. Cada card mostra uma miniatura do vídeo, permite reproduzi-lo na própria página em tamanho compacto ou ampliado e oferece um link direto para o YouTube. Não há integração com banco de dados ou serviço de reservas.
 
 ## Acessar
 
@@ -8,11 +8,11 @@ https://devdocenterafael.github.io/plataforma_librando/
 
 ## Executar localmente
 
-Abra `index.html` no navegador ou use a extensão Live Server no Visual Studio Code. O projeto é estático e não exige instalação de dependências.
+O projeto é estático e não exige instalação de dependências. Para reproduzir vídeos incorporados, abra pelo GitHub Pages ou sirva a pasta com a extensão Live Server no Visual Studio Code; a reprodução do YouTube não funciona ao abrir o arquivo diretamente por `file://`.
 
 ## Acessibilidade
 
-As duas páginas oferecem controles para alternar entre os temas claro e escuro e para diminuir, restaurar ou aumentar o tamanho da fonte. As preferências ficam salvas localmente no navegador.
+As duas páginas oferecem um botão **Acessibilidade** com opções para alternar entre os temas claro e escuro e para diminuir, restaurar ou aumentar o tamanho da fonte. O painel pode ser usado por teclado, e as preferências ficam salvas localmente no navegador.
 
 ## Comentários no código
 
@@ -20,7 +20,7 @@ Os comentários destacam a organização das páginas, a origem dos dados e o co
 
 ## Manutenção do conteúdo
 
-As expressões, descrições, categorias e destaques ficam em `assets/js/videos.js`. Os cards encaminham para uma busca da expressão no YouTube; os endereços são gerados no navegador. O layout, as cores, os temas e as adaptações responsivas ficam em `assets/css/librando.css`.
+As expressões, descrições, categorias, destaques e IDs dos vídeos do YouTube ficam em `assets/js/videos.js`. O layout, as cores, os temas e as adaptações responsivas ficam em `assets/css/librando.css`.
 
 ## Estrutura
 
