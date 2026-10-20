@@ -1092,6 +1092,13 @@ select:focus-visible {
     gap: 10px;
   }
 
+  .accessibility-panel {
+    right: auto;
+    left: 50%;
+    width: min(280px, calc(100vw - 24px));
+    transform: translateX(-50%);
+  }
+
   .hero {
     min-height: 420px;
   }
