@@ -8,21 +8,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/librando.css">
-  <script src="scripts/videos.js" defer></script>
+  <link rel="stylesheet" href="assets/css/librando.css">
+  <script src="assets/js/accessibility.js" defer></script>
+  <script src="assets/js/videos.js" defer></script>
   <title>Librando — um sinal de cada vez</title>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <!-- Cabeçalho compartilhado com identidade, navegação e recursos de acessibilidade. -->
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Navegação principal">
       <a class="brand" href="index.html" aria-label="Librando — página inicial">
-        <img src="img/Logo_Librando.jpg" alt="Librando">
+        <img src="assets/images/librando-logo.png" alt="Librando">
       </a>
-      <a class="nav-link" href="videos.html">Explorar sinais <span aria-hidden="true">↗</span></a>
+      <div class="nav-actions">
+        <div class="accessibility-tools" role="group" aria-label="Opções de acessibilidade">
+          <button class="font-button" type="button" data-font-action="decrease" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A−</button>
+          <button class="font-button" type="button" data-font-action="reset" aria-label="Restaurar tamanho padrão da fonte" title="Restaurar fonte">A</button>
+          <button class="font-button" type="button" data-font-action="increase" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+          <button class="theme-button" type="button" data-theme-toggle aria-label="Ativar modo escuro" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+            <span class="theme-label">Modo escuro</span>
+          </button>
+          <span class="sr-only" data-accessibility-status aria-live="polite" aria-atomic="true"></span>
+        </div>
+        <a class="nav-link" href="pages/videos.html">Explorar sinais <span aria-hidden="true">↗</span></a>
+      </div>
     </nav>
   </header>
 
+  <!-- Apresentação da proposta e acesso rápido à primeira coleção de sinais. -->
   <main id="conteudo">
     <section class="hero">
       <div class="hero-inner">
@@ -48,11 +63,12 @@
       <div class="video-grid" id="featured-videos" aria-live="polite"></div>
       <div class="section-cta">
         <p>Quer aprender mais sinais e encontrar o que precisa?</p>
-        <a class="button button-primary" href="videos.html">Descobrir mais sinais <span aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="pages/videos.html">Descobrir mais sinais <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
 
+  <!-- Rodapé enxuto, sem integrações ou contatos de terceiros. -->
   <footer class="site-footer">
     <a class="footer-brand" href="index.html">Librando<span>.</span></a>
     <p>Mais sinais, mais encontros, mais possibilidades.</p>

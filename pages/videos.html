@@ -8,24 +8,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/librando.css">
-  <script src="scripts/videos.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/librando.css">
+  <script src="../assets/js/accessibility.js" defer></script>
+  <script src="../assets/js/videos.js" defer></script>
   <title>Explorar sinais — Librando</title>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <!-- Cabeçalho mantém navegação e acessibilidade consistentes entre páginas. -->
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Navegação principal">
-      <a class="brand" href="index.html" aria-label="Librando — página inicial">
-        <img src="img/Logo_Librando.jpg" alt="Librando">
+      <a class="brand" href="../index.html" aria-label="Librando — página inicial">
+        <img src="../assets/images/librando-logo.png" alt="Librando">
       </a>
-      <a class="nav-link" href="index.html"><span aria-hidden="true">←</span> Página inicial</a>
+      <div class="nav-actions">
+        <div class="accessibility-tools" role="group" aria-label="Opções de acessibilidade">
+          <button class="font-button" type="button" data-font-action="decrease" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A−</button>
+          <button class="font-button" type="button" data-font-action="reset" aria-label="Restaurar tamanho padrão da fonte" title="Restaurar fonte">A</button>
+          <button class="font-button" type="button" data-font-action="increase" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+          <button class="theme-button" type="button" data-theme-toggle aria-label="Ativar modo escuro" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+            <span class="theme-label">Modo escuro</span>
+          </button>
+          <span class="sr-only" data-accessibility-status aria-live="polite" aria-atomic="true"></span>
+        </div>
+        <a class="nav-link" href="../index.html"><span aria-hidden="true">←</span> Página inicial</a>
+      </div>
     </nav>
   </header>
 
+  <!-- Catálogo de sinais pesquisável, categorizado e paginado. -->
   <main id="conteudo" class="catalog-page">
     <section class="catalog-intro">
-      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Início</a>
+      <a class="back-link" href="../index.html"><span aria-hidden="true">←</span> Início</a>
       <span class="section-kicker">Acervo Librando</span>
       <h1>Encontre seu próximo <span>sinal.</span></h1>
       <p>Explore expressões em Libras por assunto ou pesquise uma palavra. Os vídeos abrem resultados relacionados no YouTube.</p>
@@ -62,8 +77,9 @@
     </section>
   </main>
 
+  <!-- O mesmo rodapé leve usado na página inicial. -->
   <footer class="site-footer">
-    <a class="footer-brand" href="index.html">Librando<span>.</span></a>
+    <a class="footer-brand" href="../index.html">Librando<span>.</span></a>
     <p>Mais sinais, mais encontros, mais possibilidades.</p>
     <span class="footer-note">Os vídeos são encontrados no YouTube.</span>
   </footer>

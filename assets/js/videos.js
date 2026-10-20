@@ -1,3 +1,4 @@
+// Centralized video metadata feeds both the featured grid and searchable catalog.
 const videos = [
   { title: 'Bom dia', category: 'cumprimentos', description: 'Comece uma conversa desejando um bom dia.', featured: true },
   { title: 'Boa tarde', category: 'cumprimentos', description: 'Aprenda a cumprimentar alguém durante a tarde.', featured: true },
@@ -44,22 +45,51 @@ const categoryNames = {
   emocoes: 'Emoções',
 };
 
+// Build cards with safe text nodes and a YouTube search link for each expression.
 function createVideoCard(video, index) {
   const card = document.createElement('article');
   card.className = 'video-card';
-  card.innerHTML = `
-    <a class="video-cover cover-${video.category}" href="https://www.youtube.com/results?search_query=${encodeURIComponent(`${video.title} em Libras como sinalizar`)}" target="_blank" rel="noopener noreferrer" aria-label="Buscar ${video.title} em Libras no YouTube">
-      <span class="cover-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
-      <span class="cover-word" aria-hidden="true">${video.title}</span>
-      <span class="play-button" aria-hidden="true">▶</span>
-      <span class="youtube-label"><span aria-hidden="true">▶</span> Ver no YouTube</span>
-    </a>
-    <div class="video-info">
-      <span class="category-tag tag-${video.category}">${categoryNames[video.category]}</span>
-      <h3>${video.title}</h3>
-      <p>${video.description}</p>
-    </div>
-  `;
+  const link = document.createElement('a');
+  link.className = `video-cover cover-${video.category}`;
+  link.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(`${video.title} em Libras como sinalizar`)}`;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', `Buscar ${video.title} em Libras no YouTube`);
+
+  const number = document.createElement('span');
+  number.className = 'cover-number';
+  number.setAttribute('aria-hidden', 'true');
+  number.textContent = String(index + 1).padStart(2, '0');
+
+  const title = document.createElement('span');
+  title.className = 'cover-word';
+  title.setAttribute('aria-hidden', 'true');
+  title.textContent = video.title;
+
+  const playButton = document.createElement('span');
+  playButton.className = 'play-button';
+  playButton.setAttribute('aria-hidden', 'true');
+  playButton.textContent = '▶';
+
+  const youtubeLabel = document.createElement('span');
+  youtubeLabel.className = 'youtube-label';
+  const youtubeIcon = document.createElement('span');
+  youtubeIcon.setAttribute('aria-hidden', 'true');
+  youtubeIcon.textContent = '▶';
+  youtubeLabel.append(youtubeIcon, ' Ver no YouTube');
+  link.append(number, title, playButton, youtubeLabel);
+
+  const info = document.createElement('div');
+  info.className = 'video-info';
+  const category = document.createElement('span');
+  category.className = `category-tag tag-${video.category}`;
+  category.textContent = categoryNames[video.category];
+  const heading = document.createElement('h3');
+  heading.textContent = video.title;
+  const description = document.createElement('p');
+  description.textContent = video.description;
+  info.append(category, heading, description);
+  card.append(link, info);
   return card;
 }
 
@@ -80,6 +110,7 @@ if (catalogContainer) {
   const pageSize = 9;
   let currentPage = 1;
 
+  // Apply search and category together before slicing the active page.
   function renderCatalog() {
     const query = searchInput.value.trim().toLocaleLowerCase('pt-BR');
     const category = categoryFilter.value;
@@ -102,6 +133,7 @@ if (catalogContainer) {
 
     if (pageCount < 2) return;
 
+    // Keep pagination controls native so they work with keyboards and screen readers.
     const previous = createPageButton('← Anterior', currentPage - 1, currentPage === 1);
     pagination.append(previous);
     for (let page = 1; page <= pageCount; page += 1) {
