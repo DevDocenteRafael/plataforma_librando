@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore vídeos de Libras por tema e encontre sinais para se comunicar no dia a dia.">
+  <meta name="theme-color" content="#fffaf6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/librando.css">
+  <script src="scripts/videos.js" defer></script>
+  <title>Explorar sinais — Librando</title>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Navegação principal">
+      <a class="brand" href="index.html" aria-label="Librando — página inicial">
+        <img src="img/Logo_Librando.jpg" alt="Librando">
+      </a>
+      <a class="nav-link" href="index.html"><span aria-hidden="true">←</span> Página inicial</a>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="catalog-page">
+    <section class="catalog-intro">
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Início</a>
+      <span class="section-kicker">Acervo Librando</span>
+      <h1>Encontre seu próximo <span>sinal.</span></h1>
+      <p>Explore expressões em Libras por assunto ou pesquise uma palavra. Os vídeos abrem resultados relacionados no YouTube.</p>
+    </section>
+
+    <section class="section catalog-section" aria-labelledby="catalog-title">
+      <div class="catalog-toolbar">
+        <div>
+          <h2 id="catalog-title">Todos os sinais</h2>
+          <p id="results-summary" class="results-summary" aria-live="polite"></p>
+        </div>
+        <div class="filters">
+          <label class="search-field">
+            <span class="sr-only">Buscar sinal</span>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="video-search" type="search" placeholder="Buscar uma expressão..." autocomplete="off">
+          </label>
+          <label class="select-field">
+            <span class="sr-only">Filtrar por categoria</span>
+            <select id="category-filter">
+              <option value="all">Todas as categorias</option>
+              <option value="cumprimentos">Cumprimentos</option>
+              <option value="cortesia">Cortesia</option>
+              <option value="conversa">Conversação</option>
+              <option value="cotidiano">Cotidiano</option>
+              <option value="emocoes">Emoções</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="video-grid" id="all-videos" aria-live="polite"></div>
+      <nav class="pagination" id="pagination" aria-label="Paginação dos vídeos"></nav>
+      <p class="empty-state" id="empty-state" hidden>Nenhum sinal encontrado. Tente outra palavra ou categoria.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html">Librando<span>.</span></a>
+    <p>Mais sinais, mais encontros, mais possibilidades.</p>
+    <span class="footer-note">Os vídeos são encontrados no YouTube.</span>
+  </footer>
+</body>
+</html>
