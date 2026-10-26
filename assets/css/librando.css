@@ -466,6 +466,10 @@ select:focus-visible {
   font-size: .85rem;
 }
 
+.video-count-mobile {
+  display: none;
+}
+
 .video-count strong {
   color: var(--orange-dark);
 }
@@ -1179,6 +1183,14 @@ select:focus-visible {
     margin-top: 20px;
     padding: 7px 9px;
     font-size: .74rem;
+  }
+
+  .video-count-desktop {
+    display: none;
+  }
+
+  .video-count-mobile {
+    display: inline;
   }
 
   .video-grid {
