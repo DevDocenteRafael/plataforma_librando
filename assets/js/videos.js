@@ -424,7 +424,14 @@ if (catalogContainer) {
     // Keep pagination controls native so they work with keyboards and screen readers.
     const previous = createPageButton('← Anterior', currentPage - 1, currentPage === 1);
     pagination.append(previous);
-    for (let page = 1; page <= pageCount; page += 1) {
+    // Show at most three numbered pages so the controls stay usable on narrow screens.
+    const visiblePageCount = Math.min(3, pageCount);
+    const firstVisiblePage = Math.min(
+      Math.max(1, currentPage - Math.floor((visiblePageCount - 1) / 2)),
+      pageCount - visiblePageCount + 1,
+    );
+    const lastVisiblePage = firstVisiblePage + visiblePageCount - 1;
+    for (let page = firstVisiblePage; page <= lastVisiblePage; page += 1) {
       const button = createPageButton(String(page), page, false);
       button.setAttribute('aria-label', `Página ${page}`);
       if (page === currentPage) button.setAttribute('aria-current', 'page');

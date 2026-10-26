@@ -975,14 +975,16 @@ select:focus-visible {
 
 .pagination {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
   justify-content: center;
   gap: 8px;
   margin-top: 38px;
+  max-width: 100%;
 }
 
 .page-button {
-  min-width: 42px;
+  min-width: 40px;
   min-height: 40px;
   padding: 0 12px;
   border: 1px solid var(--line);
@@ -992,6 +994,20 @@ select:focus-visible {
   cursor: pointer;
   font-size: .86rem;
   font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 5px;
+    margin-top: 28px;
+  }
+
+  .page-button {
+    min-width: 36px;
+    min-height: 38px;
+    padding: 0 8px;
+    font-size: .8rem;
+  }
 }
 
 .page-button:hover:not(:disabled),
